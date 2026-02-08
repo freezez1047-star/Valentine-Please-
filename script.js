@@ -83,7 +83,7 @@ function createRoseBackground() {
     for (let i = 0; i < 30; i++) {
         const rose = document.createElement('div');
         rose.className = 'rose';
-        rose.textContent = roses[i % 2]; // Alternate between red and white roses
+        rose.textContent = roses[i % 2];
         rose.style.left = (Math.random() * 100) + '%';
         rose.style.top = (Math.random() * 100) + '%';
         rose.style.transform = `rotate(${Math.random() * 360}deg)`;
@@ -118,6 +118,16 @@ function createConfetti() {
         }, i * 30);
     }
 }
+
+// Add heartbeat animation to CSS if not already there
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+`;
+document.head.appendChild(style);
 
 // Initialize when page loads
 createFloatingHearts();
