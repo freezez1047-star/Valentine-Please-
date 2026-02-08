@@ -166,6 +166,10 @@ body {
     padding: 20px 50px;
     font-size: 24px;
     position: absolute;
+    z-index: 10;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* Letter Page */
