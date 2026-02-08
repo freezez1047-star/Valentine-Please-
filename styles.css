@@ -87,13 +87,6 @@ body {
     }
 }
 
-.emoji-heart {
-    font-size: clamp(80px, 15vw, 150px);
-    display: block;
-    margin: 30px 0;
-    animation: heartbeat 1.5s infinite;
-}
-
 /* Please image styling */
 .please-image {
     width: clamp(200px, 40vw, 350px);
@@ -105,21 +98,15 @@ body {
     animation: fadeIn 1s ease-out 0.3s backwards;
 }
 
-.question-image {
-    max-width: 300px;
-    width: 80%;
-    height: auto;
-    border-radius: 20px;
-    margin: 30px auto;
-    display: block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: fadeIn 1s ease-out 0.3s backwards;
-}
-
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    25% { transform: scale(1.2); }
-    50% { transform: scale(1); }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .buttons-container {
@@ -167,7 +154,6 @@ body {
     background: linear-gradient(135deg, var(--pink) 0%, var(--coral) 100%);
     padding: 25px 60px;
     font-size: 28px;
-    /* REMOVED: animation: fadeIn 1s ease-out 0.5s backwards; */
 }
 
 #yesBtn:hover {
@@ -180,18 +166,6 @@ body {
     padding: 20px 50px;
     font-size: 24px;
     position: absolute;
-    /* REMOVED: animation: fadeIn 1s ease-out 0.7s backwards; */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 /* Letter Page */
@@ -237,6 +211,17 @@ body {
     filter: blur(1px);
 }
 
+.letter-container {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 60px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
 /* Yay image styling */
 .yay-image {
     width: clamp(200px, 40vw, 350px);
@@ -259,33 +244,12 @@ body {
     }
 }
 
-.letter-container {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 30px;
-    padding: 60px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
 .letter-container h1 {
     font-family: 'Caveat', cursive;
     font-size: clamp(40px, 8vw, 70px);
     color: var(--pink);
     text-align: center;
     margin-bottom: 30px;
-}
-
-.yay-image {
-    max-width: 250px;
-    width: 70%;
-    height: auto;
-    border-radius: 20px;
-    margin: 0 auto 30px auto;
-    display: block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .letter-container p {
